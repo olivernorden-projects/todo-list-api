@@ -33,4 +33,13 @@ router.post('/', (req, res) => {
         .then(todo => res.json(todo));
 });
 
+// @route   DELETE api/todos:id
+// @desc    Add a new todo
+// @access  Public
+router.delete('/:id', (req, res) => {
+    Todo.findByIdAndDelete(req.params.id)
+        .then(()=>res.json({ success: true }))
+        .catch(err => res.status(404).status({ success: false }));
+});
+
 module.exports = router;
