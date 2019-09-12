@@ -4,6 +4,9 @@ const config = (process.env.NODE_ENV !== 'production') ? require('config') : nul
 
 const app = express();
 
+// Bodyparser
+app.use(express.json());
+
 // Connect to MongoDB
 const db = process.env.mongoURI || config.get('mongoURI');
 mongoose.connect(db, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
