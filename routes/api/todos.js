@@ -42,4 +42,16 @@ router.delete('/:id', (req, res) => {
         .catch(err => res.status(404).status({ success: false }));
 });
 
+// @route   PUT api/todos
+// @desc    Toggle completed state of a todo
+// @access  Public
+router.put('/', (req, res) => {
+    Todo.findById(req.body.id)
+        .then(todo => {
+            todo.completed = !todo.completed;
+            todo.save()
+                .then(todo => res.json(todo));
+        });
+});
+
 module.exports = router;
