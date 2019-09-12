@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "config": "^3.2.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.7.0"
   },
@@ -12,8 +13,9 @@
     "nodemon": "^1.19.2"
   },
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
   },
   "repository": {
     "type": "git",

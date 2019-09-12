@@ -1,8 +1,16 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const config = (process.env.NODE_ENV !== 'production') ? require('config') : null; // Db connection
 
 const app = express();
+
+// CORS
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 
+}
+app.use(cors(corsOptions));
 
 // Bodyparser
 app.use(express.json());
