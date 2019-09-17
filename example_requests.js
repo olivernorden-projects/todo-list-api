@@ -13,7 +13,6 @@ getTodos()
 
 
 
-
 // Add todo
 const addTodo = todo => {
     return fetch('https://obscure-brook-05365.herokuapp.com/api/todos', {
@@ -54,6 +53,8 @@ toggleTodo(toggleId)
         console.log(toggledTodo);
     })
     .catch(err => console.error(err));
+
+
 
 // Delete todo
 const deleteTodo = id => {
