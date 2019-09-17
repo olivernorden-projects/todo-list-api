@@ -1,18 +1,4 @@
-# Todo list API
-A simple API to add, delete, get and update todo list entries.
-
-API url: https://obscure-brook-05365.herokuapp.com/api/todos
-
-Content-type: application/json
-
-HTTP methods: GET, POST, PUT, DELETE
-
-## Examples
-
-See below for example actions
-
-### Get todos
-```
+// Get todos
 const getTodos = () => {
     return fetch('https://obscure-brook-05365.herokuapp.com/api/todos') // Default method is GET
         .then(res => res.json());
@@ -24,10 +10,11 @@ getTodos()
         console.log(todos);
     })
     .catch(err => console.error(err));
-```
 
-### Add todo
-```
+
+
+
+// Add todo
 const addTodo = todo => {
     return fetch('https://obscure-brook-05365.herokuapp.com/api/todos', {
         method: 'POST',
@@ -46,10 +33,10 @@ addTodo(newTodoAdd)
         console.log(newTodo);
     })
     .catch(err => console.error(err));
-```
 
-### Toggle complete of todo
-```
+
+
+// Toggle complete state
 const toggleTodo = id => {
     return fetch('https://obscure-brook-05365.herokuapp.com/api/todos', {
         method: 'PUT',
@@ -67,10 +54,8 @@ toggleTodo(toggleId)
         console.log(toggledTodo);
     })
     .catch(err => console.error(err));
-```
 
-### Delete todo
-```
+// Delete todo
 const deleteTodo = id => {
     return fetch(`https://obscure-brook-05365.herokuapp.com/api/todos/${id}`, {
         method: 'DELETE'
@@ -84,5 +69,3 @@ deleteTodo(deleteId)
         console.log(res);
     })
     .catch(err => console.error(err));
-```
-
